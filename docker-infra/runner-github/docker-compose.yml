@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  github-runner:
+    image: myoung34/github-runner:latest
+    container_name: github-runner
+    restart: always
+    environment:
+      REPO_URL: https://github.com/woxet/docker-infra/
+      RUNNER_NAME: internal-docker-runner
+      RUNNER_WORKDIR: /tmp/runner
+      RUNNER_SCOPE: repo
+      LABELS: internal,docker
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
