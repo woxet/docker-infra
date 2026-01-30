@@ -8,6 +8,7 @@ services:
     environment:
       REPO_URL: https://github.com/woxet/docker-infra/
       RUNNER_NAME: internal-docker-runner
+      RUNNER_TOKEN: ${RUNNER_TOKEN}
       RUNNER_WORKDIR: /tmp/runner
       RUNNER_SCOPE: repo
       LABELS: internal,docker
